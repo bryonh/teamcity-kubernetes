@@ -9,6 +9,7 @@ kubectl delete pvc mysql-pv-claim;
 kubectl delete pv mysql-pv-volume;
 kubectl delete pvc teamcity-pv-claim;
 kubectl delete pv teamcity-pv-volume;
+kubectl delete svc teamcity-loadbalancer;
 
 
 

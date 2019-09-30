@@ -34,3 +34,11 @@ mkdir /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/l
 4. Click Proceed
 5. Scroll WAY down and accept license agreement
 6. Create TeamCity user and set password
+
+### To-Do
+
+- [ ] [Configure Data Directory](https://www.jetbrains.com/help/teamcity/teamcity-data-directory.html#TeamCityDataDirectory-ConfiguringtheLocation)
+- [ ] Convert env vars to configmaps
+- [ ] move msql-connector into configmap volume
+- [ ] convert service to ingress instead of loadbalancer
+- [ ] deploy to eks

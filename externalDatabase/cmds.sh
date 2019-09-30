@@ -7,6 +7,9 @@ kubectl delete po teamcity;
 kubectl delete deployment,svc mysql;
 kubectl delete pvc mysql-pv-claim;
 kubectl delete pv mysql-pv-volume;
+kubectl delete pvc teamcity-pv-claim;
+kubectl delete pv teamcity-pv-volume;
+
 
 
 kubectl apply -f mysql-pv.yaml;

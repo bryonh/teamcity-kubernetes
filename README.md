@@ -1,2 +1,4 @@
 # teamcity-kubernetes
-TeamCity multi-node with an external mysql database running on Kubernetes
+TeamCity running on Kubernetes
+
+_this code base will evolve as my knowledge of Kubernetes evolves_

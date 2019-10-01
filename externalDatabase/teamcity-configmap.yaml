@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mysql-config
+  name: teamcity-config
 data:
   MYSQL_DATABASE: "teamcity"
   MYSQL_USER: "teamcity"

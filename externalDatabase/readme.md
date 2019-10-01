@@ -39,6 +39,6 @@ mkdir /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/l
 
 - [ ] [Configure Data Directory](https://www.jetbrains.com/help/teamcity/teamcity-data-directory.html#TeamCityDataDirectory-ConfiguringtheLocation)
 - [ ] Convert env vars to configmaps
-- [ ] move msql-connector into configmap subpath (see page 210 kubernetes in action)
+- [ ] ~~move msql-connector into configmap subpath (see page 210 kubernetes in action)~~ file char lenght to long for configmap
 - [ ] convert service to ingress instead of loadbalancer
 - [ ] deploy to eks

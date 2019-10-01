@@ -39,7 +39,7 @@ mkdir /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/l
 ### To-Do
 
 - [ ] [Configure Data Directory](https://www.jetbrains.com/help/teamcity/teamcity-data-directory.html#TeamCityDataDirectory-ConfiguringtheLocation)
-- [ x ] Convert env vars to configmaps
+- [x] Convert env vars to configmaps
 - [ ] move pwds from mysql deployment to secrets
 - [ ] [Stage database connection string](https://www.jetbrains.com/help/teamcity/setting-up-an-external-database.html?_ga=2.213872598.374019039.1565610915-964155662.1565610915#SettingupanExternalDatabase-DatabaseConfigurationProperties)
     ```

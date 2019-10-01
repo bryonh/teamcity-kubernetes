@@ -15,7 +15,7 @@ kubectl apply -f teamcity-loadbalancer.yaml;
 
 ```
 #Copy mysql driver
-mkdir /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/lib/jdbc
+mkdir -p /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/lib/jdbc
 ```
 
 [external mysql database](https://www.jetbrains.com/help/teamcity/setting-up-an-external-database.html?_ga=2.213872598.374019039.1565610915-964155662.1565610915#SettingupanExternalDatabase-MySQL)
@@ -36,6 +36,20 @@ mkdir /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/l
 5. Scroll WAY down and accept license agreement
 6. Create TeamCity user and set password
 
+### Delete Kubernetes Resources
+
+```
+kubectl delete po teamcity;
+kubectl delete deployment,svc mysql;
+kubectl delete pvc mysql-pv-claim;
+kubectl delete pv mysql-pv-volume;
+kubectl delete pvc teamcity-pv-claim;
+kubectl delete pv teamcity-pv-volume;
+kubectl delete svc teamcity-loadbalancer;
+kubectl delete configmap teamcity-config;
+```
+
+
 ### To-Do
 
 - [ ] [Configure Data Directory](https://www.jetbrains.com/help/teamcity/teamcity-data-directory.html#TeamCityDataDirectory-ConfiguringtheLocation)
@@ -52,3 +66,4 @@ mkdir /tmp/datadir/lib/jdbc && cp mysql-connector-java-8.0.17.jar /tmp/datadir/l
 - [ ] ~~move msql-connector into configmap subpath (see page 210 kubernetes in action)~~ file char lenght to long for configmap
 - [ ] convert service to ingress instead of loadbalancer
 - [ ] deploy to eks
+- [ ] [Configure Newly Installed MySQL Server](https://www.jetbrains.com/help/teamcity/how-to.html?_ga=2.213872598.374019039.1565610915-964155662.1565610915#HowTo...-ConfigureNewlyInstalledMySQLServer)

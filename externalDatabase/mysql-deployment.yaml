@@ -48,7 +48,16 @@ spec:
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
+        - name: mysql-config-volume
+          mountPath: /etc/mysql/conf.d/binlog_format.cnf
+          subPath: binlog_format.cnf
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
+      - name: mysql-config-volume
+        configMap:
+          name: teamcity-config
+          items:
+          - key: mysql_binlog_format.cnf
+            path: binlog_format.cnf

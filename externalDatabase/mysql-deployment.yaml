@@ -31,9 +31,15 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: password
         - name: MYSQL_DATABASE
-          value: "teamcity"
+          valueFrom: 
+            configMapKeyRef:
+                name: teamcity-config
+                key: MYSQL_DATABASE
         - name: MYSQL_USER
-          value: "teamcity"
+          valueFrom:
+            configMapKeyRef:
+              name: teamcity-config
+              key: MYSQL_USER
         - name: MYSQL_PASSWORD
           value: "password"
         ports:

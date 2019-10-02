@@ -29,7 +29,10 @@ spec:
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: password
+          valueFrom:
+            secretKeyRef:
+              name: teamcity-secrets
+              key: rootPassword
         - name: MYSQL_DATABASE
           valueFrom: 
             configMapKeyRef:

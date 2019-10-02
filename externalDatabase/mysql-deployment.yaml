@@ -41,7 +41,10 @@ spec:
               name: teamcity-config
               key: MYSQL_USER
         - name: MYSQL_PASSWORD
-          value: "password"
+          valueFrom:
+            secretKeyRef:
+              name: teamcity-secrets
+              key: userPassword
         ports:
         - containerPort: 3306
           name: mysql

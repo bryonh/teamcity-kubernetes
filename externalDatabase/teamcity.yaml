@@ -22,8 +22,8 @@ spec:
     persistentVolumeClaim:
       claimName: teamcity-pv-claim
   - name: database-properties
-    configMap:
-      name: teamcity-config
+    secret:
+      secretName: teamcity-secrets
       items:
-      - key: database_properties
+      - key: database.properties
         path: database.properties

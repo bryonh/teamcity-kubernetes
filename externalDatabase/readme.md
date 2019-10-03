@@ -13,7 +13,10 @@ kubectl apply -f teamcity.yaml;
 kubectl apply -f teamcity-loadbalancer.yaml;
 ```
 
-_`echo -n 'password' | base64` is used to populate values in teamcity-secerts_
+```
+echo -n 'password' | base64 #is used to populate values in teamcity-secerts
+cat secret-files/database.properties | base64
+```
 ### Stage Persistent TeamCityDataDirectory Volume
 
 ```
@@ -59,7 +62,7 @@ kubectl delete secrets teamcity-secrets;
 - [ ] [Configure Data Directory](https://www.jetbrains.com/help/teamcity/teamcity-data-directory.html#TeamCityDataDirectory-ConfiguringtheLocation)
 - [x] Convert env vars to configmaps
 - [x] move pwds from mysql deployment to secrets (pg 222)
-- [ ] [Stage database connection string](https://www.jetbrains.com/help/teamcity/setting-up-an-external-database.html?_ga=2.213872598.374019039.1565610915-964155662.1565610915#SettingupanExternalDatabase-DatabaseConfigurationProperties)
+- [x] [Stage database connection string](https://www.jetbrains.com/help/teamcity/setting-up-an-external-database.html?_ga=2.213872598.374019039.1565610915-964155662.1565610915#SettingupanExternalDatabase-DatabaseConfigurationProperties)
     ```
     #/tmp/datadir/config/database.properties
     #Tue Oct 01 13:40:13 GMT 2019

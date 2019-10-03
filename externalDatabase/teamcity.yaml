@@ -14,7 +14,16 @@ spec:
     volumeMounts:
     - name: teamcity-persistent-storage
       mountPath: /data/teamcity_server/datadir
+    - name: database-properties
+      mountPath: /data/teamcity_server/datadir/config/database.properties
+      subPath: database.properties
   volumes:
   - name: teamcity-persistent-storage
     persistentVolumeClaim:
       claimName: teamcity-pv-claim
+  - name: database-properties
+    configMap:
+      name: teamcity-config
+      items:
+      - key: database_properties
+        path: database.properties
